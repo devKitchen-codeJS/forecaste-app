@@ -1,10 +1,9 @@
 "use client";
 import { Inter } from "next/font/google";
 
-import "./globals.css";
+import "../globals.css";
 import { useState } from "react";
 import ThemeChange from "@/components/themeChange";
-import weatherIcon from "../../public/sun_rain.png";
 import StoreProvider from "@/lib/providers/storeProvider";
 
 //transition ease-in-out delay-150 duration-300
@@ -24,8 +23,8 @@ export default function RootLayout({
             <ThemeChange />
           </div> */}
           <div className='absolute  mt-7   '>
-            {" "}
-            <ThemeChange />{" "}
+         
+            <ThemeChange />
           </div>
         </div>
         <div className='bg-primary px-[80px] py-[40px]  h-[100vh]'>

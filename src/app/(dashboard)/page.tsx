@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
-import frame3 from "../../public/locationIcon.png";
-import framearrow from "../../public/Vector.png";
+import frame3 from "@/../public/locationIcon.png";
+import framearrow from "@/../public/Vector.png";
 import TempInfo from "@/components/tempretureInfo";
-import cloud from "../../public/cloud.png";
+import cloud from "@/../public/cloud.png";
 import SideBar from "@/components/bars/sideBar";
 import Activities from "@/components/bars/activitiesBar";
 import WetherBar from "@/components/bars/wheatherBar";
