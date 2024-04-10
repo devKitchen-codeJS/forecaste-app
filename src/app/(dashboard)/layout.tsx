@@ -5,6 +5,7 @@ import "../globals.css";
 import { useState } from "react";
 import ThemeChange from "@/components/themeChange";
 import StoreProvider from "@/lib/providers/storeProvider";
+import AuthGoogleProvider from "@/lib/providers/authGoogleProvider";
 
 //transition ease-in-out delay-150 duration-300
 const inter = Inter({ subsets: ["latin"] });
@@ -23,12 +24,13 @@ export default function RootLayout({
             <ThemeChange />
           </div> */}
           <div className='absolute  mt-7   '>
-         
             <ThemeChange />
           </div>
         </div>
         <div className='bg-primary px-[80px] py-[40px]  h-[100vh]'>
-          <StoreProvider>{children}</StoreProvider>
+          <StoreProvider>
+            <AuthGoogleProvider>{children}</AuthGoogleProvider>
+          </StoreProvider>
         </div>
       </body>
     </html>

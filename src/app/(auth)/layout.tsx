@@ -6,6 +6,7 @@ import { useState } from "react";
 import ThemeChange from "@/components/themeChange";
 import StoreProvider from "@/lib/providers/storeProvider";
 import content from "@/../public/Content.png";
+import AuthGoogleProvider from "@/lib/providers/authGoogleProvider";
 
 //transition ease-in-out delay-150 duration-300
 const inter = Inter({ subsets: ["latin"] });
@@ -36,17 +37,19 @@ export default function RootLayout({
                       Start with
                     </span>
                     <span className='z-1 font-bold text-base-100 text-[60px]  '>
-                      Forecaste-Focus
+                      Forecaste-[Focus]
                     </span>
                   </div>
                 </div>
               </div>
 
               <div className='col-span-6 col-start-7 mt-[200px] '>
-              {children}
+                {/* <StoreProvider>
+                  <AuthGoogleProvider>{children}</AuthGoogleProvider>
+                </StoreProvider> */}
+                <StoreProvider>{children}</StoreProvider>
               </div>
             </div>
-            {/* {children} */}
           </div>
         </div>
       </body>
