@@ -6,9 +6,7 @@ import { useState } from "react";
 import ThemeChange from "@/components/themeChange";
 import StoreProvider from "@/lib/providers/storeProvider";
 import content from "@/../public/Content.png";
-import AuthGoogleProvider from "@/lib/providers/authGoogleProvider";
-
-//transition ease-in-out delay-150 duration-300
+import '@/lib/firebase/firebase'
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({

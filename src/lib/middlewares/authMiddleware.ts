@@ -1,10 +1,11 @@
 import firebase from "firebase/compat/app";
 import { auth } from "../firebase/firebase";
-import { clearUser, setUser } from "../features/appSlice";
+import { removeUser, setUser } from "../features/appSlice";
 import { useAppDispatch } from "../hooks/reduxHooks";
 
 export const signInWithGoogle = () => async () => {
   const dispatch = useAppDispatch();
+  console.log('some')
   try {
     const provider = new firebase.auth.GoogleAuthProvider();
     const result = await firebase.auth().signInWithPopup(provider);
@@ -18,7 +19,7 @@ export const signOut = () => async () => {
   const dispatch = useAppDispatch();
   try {
     await firebase.auth().signOut();
-    dispatch(clearUser());
+    dispatch(removeUser());
   } catch (error) {
     console.error("Error signing out:", error);
   }

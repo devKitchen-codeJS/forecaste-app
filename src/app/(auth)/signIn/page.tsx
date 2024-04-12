@@ -1,53 +1,65 @@
 "use client";
 import React from "react";
-import {
-  Formik,
-  FormikHelpers,
-  FormikProps,
-  Form,
-  Field,
-  FieldProps,
-} from "formik";
+import { Formik, Form, Field } from "formik";
 import { useRouter } from "next/navigation";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks/reduxHooks";
-import appSelectore from "@/lib/features/appSelectors";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { setUser } from "@/lib/features/appSlice";
 
 interface MyFormValues {
-  firstName: string;
+  email: string;
+  password: string;
 }
 const SignIn: React.FC = () => {
-  const initialValues: MyFormValues = { firstName: "" };
+  const initialValues: MyFormValues = { email: "", password: "" };
   const router = useRouter();
   const dispatch = useAppDispatch();
-  const isAuth = useAppSelector(appSelectore.getIsAuth);
-  const handleAuth = () => {
-    const o={
-      user:'user',
-      auth:true,
+  const auth = getAuth();
+
+  const handleLogin = (e: any) => {
+    console.log("val", e);
+    const { email, password } = e;
+    console.log(email, password);
+    try {
+      signInWithEmailAndPassword(auth, email, password).then(
+        (userCredential: any) => {
+          console.log(userCredential);
+          localStorage.setItem(
+            "refreshToken",
+            userCredential._tokenResponse.refreshToken
+          );
+          // console.log(localStorage.getItem('refreshToken'))
+          let payload: any = {
+            email: userCredential.user.email,
+            token: userCredential._tokenResponse.refreshToken,
+            isAuthenticated: true,
+          };
+          // console.log('payload', payload)
+          dispatch(setUser(payload));
+          // console.log(localStorage.getItem("refreshToken"));
+          router.push("/");
+        }
+      );
+    } catch (error) {
+      console.log("error", error);
     }
-    dispatch(setUser(o));
-    router.push("/");
   };
 
   return (
     <div className=' h-[500px] flex flex-col items-center  justify-center'>
       <span className=' text-[25px] font-bold text-base-100'>Sign In</span>
       <div className='block'>
-        <Formik
-          initialValues={initialValues}
-          onSubmit={(values, actions) => {
-            console.log({ values, actions });
-            alert(JSON.stringify(values, null, 2));
-            actions.setSubmitting(false);
-          }}>
+        <Formik initialValues={initialValues} onSubmit={handleLogin}>
           <Form className='mt-10'>
-            {/* <label htmlFor='firstName'>First Name</label> */}
             <Field
               id='email'
               name='email'
               placeholder='User Email'
-              // type='email'
+              type='email'
               className='input input-bordered w-full max-w-xs block mb-10'
             />
 
@@ -62,11 +74,11 @@ const SignIn: React.FC = () => {
             <div className=' flex justify-center '>
               <button
                 type='submit'
-                onClick={handleAuth}
                 className='  rounded-lg  w-[100px] h-[50px] text-[20px] bg-neutral text-base-100'>
                 Submit
               </button>
             </div>
+
             <div className='mt-20'>
               <span>
                 Dont have an account ? Just{" "}
