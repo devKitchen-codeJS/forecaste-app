@@ -11,6 +11,7 @@
 
 body {
   /* color: rgb(var(--foreground-rgb)); */
+  height: 100%;
 }
 
 @layer utilities {

@@ -1,20 +1,22 @@
 "use client";
 
-const Player = () => {
+import { Spotify } from "react-spotify-embed";
 
+const Player = () => {
   const view = "coverart"; // or 'coverart list'
   const theme = "white"; // or 'white'
   return (
-    <div>
+    <div className=' rounded-lg'>
       <iframe
-        className='border-radius:12px'
         src='https://open.spotify.com/embed/playlist/1gAgsbs6NXwgqmqc04yQ6r?utm_source=generator'
-        width='100%'
-        height='152'
-        frameBorder='0'
-        // allowfullscreen=''
-        allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
-        loading='lazy'></iframe>
+        width='500'
+        height='380'
+        // frameborder='0'
+        style={{ borderRadius: "12px" }}
+        // allowtransparency='true'
+        allow='encrypted-media'
+        // allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
+      ></iframe>
     </div>
   );
 };

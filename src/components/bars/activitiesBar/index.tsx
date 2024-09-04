@@ -7,10 +7,10 @@ const Activities: React.FC = () => {
   const router = useRouter()
 
   return (
-    <div className='w-[100%] h-[240px] px-[20px] py-[15px] rounded-[40px] bg-base-200 grid grid-cols-2 border	'>
-      <div className=' col-start-1 border'>
+    <div className='w-[100%] h-[240px] px-[20px] py-[15px] rounded-[40px] bg-base-200 grid grid-cols-2 	'>
+      <div className=' col-start-1'>
         {" "}
-        <Player />
+        {/* <Player /> */}
       </div>
 
       <div >

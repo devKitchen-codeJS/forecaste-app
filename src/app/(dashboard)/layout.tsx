@@ -17,7 +17,6 @@ export default function RootLayout({
 }>) {
   const [theme, setTheme] = useState("mytheme");
   // console.log();
-  
 
   return (
     <html data-theme={theme} lang='en'>
@@ -30,7 +29,7 @@ export default function RootLayout({
             <ThemeChange />
           </div>
         </div>
-        <div className='bg-primary px-[80px] py-[40px]  h-[100vh]'>
+        <div className='  bg-primary px-[80px] py-[40px]  h-[100vh]'>
           <StoreProvider>
             <AuthGoogleProvider>{children}</AuthGoogleProvider>
           </StoreProvider>

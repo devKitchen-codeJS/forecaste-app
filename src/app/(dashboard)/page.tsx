@@ -9,6 +9,7 @@ import Activities from "@/components/bars/activitiesBar";
 import WetherBar from "@/components/bars/wheatherBar";
 import WetherChart from "@/components/bars/wetherChartBar";
 import ThemeChange from "@/components/themeChange";
+import Player from "@/components/spotify/player";
 export default function Home() {
   const [theme, setTheme] = useState("mytheme");
   const handle = () => {
@@ -21,8 +22,8 @@ export default function Home() {
     }
   };
   return (
-    <main className=''>
-      <div className=' grid grid-cols-12'>
+    <main className=' mt-[0px] h-[100%]'>
+      <div className=' grid grid-cols-12 '>
         <div className=' col-start-1 col-span-3  pl-[60px]'>
           <div className='flex w-44  items-center  justify-around  '>
             <img src={frame3.src} className='' />
@@ -40,11 +41,14 @@ export default function Home() {
             <TempInfo count={26} type='°C' date='12' />
           </div>
         </div>
+        <div className=' flex justify-center col-start-5 col-span-3 '>
+          <Player />
+        </div>
         <div className='flex justify-center col-start-10 col-span-3 '>
           <img src={cloud.src} />
         </div>
       </div>
-      <div className='mt-[30px]  grid grid-cols-12   gap-[40px]  '>
+      <div className='mt-[30px]   grid grid-cols-12   gap-[40px]  '>
         <div className=' col-start-1 col-span-1 '>
           <SideBar />
         </div>
