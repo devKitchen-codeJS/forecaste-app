@@ -21,10 +21,11 @@ export default function Home() {
       setTheme("dark");
     }
   };
+
   return (
-    <main className=' mt-[0px] h-[100%]'>
+    <main className=' '>
       <div className=' grid grid-cols-12 '>
-        <div className=' col-start-1 col-span-3  pl-[60px]'>
+        <div className=' col-start-1 col-span-3  pl-[60px] mt-[40px]'>
           <div className='flex w-44  items-center  justify-around  '>
             <img src={frame3.src} className='' />
             <span className=' text-base-100 text-[25px]  '>New York</span>
@@ -44,11 +45,12 @@ export default function Home() {
         <div className=' flex justify-center col-start-5 col-span-3 '>
           <Player />
         </div>
-        <div className='flex justify-center col-start-10 col-span-3 '>
+        <div className='flex justify-center col-start-9 col-span-4 '>
           <img src={cloud.src} />
         </div>
       </div>
-      <div className='mt-[30px]   grid grid-cols-12   gap-[40px]  '>
+
+      <div className='mt-[30px]  pl-[60px] pr-[60px]  grid grid-cols-12 gap-[40px]'>
         <div className=' col-start-1 col-span-1 '>
           <SideBar />
         </div>

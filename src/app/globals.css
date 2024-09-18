@@ -6,12 +6,11 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  /* border: 2px solid red; */
+  background-color: #d2982d;
 }
 
 body {
-  /* color: rgb(var(--foreground-rgb)); */
-  height: 100%;
+  /* background-color: #d2982d; */
 }
 
 @layer utilities {

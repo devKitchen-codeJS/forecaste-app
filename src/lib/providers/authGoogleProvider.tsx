@@ -12,14 +12,14 @@ function AuthGoogleProvider({ children }: { children: React.ReactNode }) {
   const token = localStorage.getItem("refreshToken");
   // let token:any = 
   const router = useRouter();
-  console.log("token", token);
+  console.log("tok2en", token);
   console.log("isAuth", isAuth);
 
 
   return (
     <div>
       {token?.length ? (
-        <div>{children}</div>
+        <div className="">{children}</div>
       ) : (
         <>
           {router.push("/signIn")}

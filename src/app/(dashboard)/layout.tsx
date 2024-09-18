@@ -21,15 +21,13 @@ export default function RootLayout({
   return (
     <html data-theme={theme} lang='en'>
       <body className={inter.className}>
-        <div className=' bg-primary flex justify-end  relative '>
-          {/* <div className='absolute mt-10 flex   flex-col justify-center '>
-            <ThemeChange />
-          </div> */}
-          <div className='absolute  mt-7   '>
+        <div className='  flex justify-end  relative '>
+          <div className=' absolute top-7 right-1'>
             <ThemeChange />
           </div>
         </div>
-        <div className='  bg-primary px-[80px] py-[40px]  h-[100vh]'>
+
+        <div>
           <StoreProvider>
             <AuthGoogleProvider>{children}</AuthGoogleProvider>
           </StoreProvider>

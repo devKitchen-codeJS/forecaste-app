@@ -7,14 +7,14 @@ const SideBar: React.FC = () => {
     console.log("asd");
   };
   return (
-    <div className='w-[100px] h-[100%] px-[20px] py-[15px] rounded-[40px] bg-base-200 text-base-100'>
-      <div className='avatar'>
+    <div className='w-[100px] h-[45vh] px-[20px]  rounded-[40px] bg-base-200 text-base-100 '>
+      <div className='avatar '>
         <div className='w-15 rounded-full'>
-          <img src='https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
+          {/* <img src='https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' /> */}
         </div>
       </div>
-      <div className='mt-[90px]flex flex-col  text-center '>
-        <div className=' mt-[50px] flex flex-col justify-center transition ease-in-out delay-150 hover:scale-110  duration-300   ' onClick={handle}>
+      <div className='flex flex-col  text-center  '>
+        <div className='  flex flex-col justify-center transition ease-in-out delay-150 hover:scale-110  duration-300   ' onClick={handle}>
           <img src={weatherIcon.src} />
           <span> weather</span>
         </div>
