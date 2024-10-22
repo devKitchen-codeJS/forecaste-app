@@ -1,5 +1,12 @@
 import React, { useEffect, useRef } from "react";
-import Chart from "chart.js/auto";
+import Chart, {
+  plugins,
+  PointElement,
+  Tooltip,
+  TooltipItem,
+} from "chart.js/auto";
+import { callback, color } from "chart.js/helpers";
+import { title } from "process";
 
 export default function ChartComponent() {
   const canvasEl: any = useRef(null);
@@ -21,11 +28,14 @@ export default function ChartComponent() {
     const ctx = canvasEl.current.getContext("2d");
 
     const gradient = ctx.createLinearGradient(0, 16, 0, 600);
+
     gradient.addColorStop(0, colors.purple.half);
     gradient.addColorStop(0.65, colors.purple.quarter);
     gradient.addColorStop(1, colors.purple.zero);
 
-    const weight = [60.0, 60.2, 59.1, 61.4, 59.9, 60.2, 59.8, 58.6, 59.6, 59.2];
+    const weight = [
+      60.0, 160.2, 59.1, 61.4, 59.9, 40.2, -39.8, -18.6, -29.6, 59.2,
+    ];
 
     const labels = [
       "Week 1",
@@ -39,35 +49,55 @@ export default function ChartComponent() {
       "Week 9",
       "Week 10",
     ];
+
     const data = {
       labels: labels,
       datasets: [
         {
-          backgroundColor: gradient,
+          borderColor: "#36A2EB",
+          backgroundColor: "#9BD0F5",
+
           label: "My First Dataset",
           data: weight,
-          // fill: true,
-          borderWidth: 2,
-          borderColor: colors.purple.default,
-          lineTension: 0.2,
-          pointBackgroundColor: colors.purple.default,
-          pointRadius: 2,
+          fill: true,
+          borderWidth: 3,
+          lineTension: 0.3,
+          pointBackgroundColor: "green",
+          pointRadius: 9,
         },
       ],
     };
+
     const config: any = {
       type: "line",
       data: data,
       options: {
+        plugins: {
+          title: {
+            display: false,
+            padding: {
+              top: 10,
+              bottom: 30,
+            },
+          },
+          tooltip: {
+            backgroundColor: "red",
+            titleSpacing: 8,
+            caretSize: 0,
+            padding: 40,
+            yAlign:'10px',
+            // xAlign:'10px'
+          },
+        },
         scales: {
           x: {
-            display: false,
+            // display: false,
           },
           y: {
-            display: false,
+            // display: false,
           },
-          suggestedMin: Math.min(...weight) - 1, // Минимум для оси Y
-          suggestedMax: Math.max(...weight) + 1, // Максимум для оси Y
+          // suggestedMin: Math.min(...weight) - 1,
+          // suggestedMax: Math.max(...weight) + 1,
         },
       },
     };

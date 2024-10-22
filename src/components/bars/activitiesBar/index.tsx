@@ -3,14 +3,16 @@ import Player from "@/components/spotify/player";
 import { useRouter } from "next/navigation";
 import React from "react";
 import ChartComponent from "./Chart";
+import { MyChart } from "./ChartRechart";
 
 const Activities: React.FC = () => {
   const router = useRouter();
 
   return (
-    <div className='w-[100%] h-[20vh] px-[20px] py-[15px] rounded-[40px] bg-base-200 grid grid-cols-2 	'>
-      <div className=' col-start-1 col-span-4 '>
-        <ChartComponent />
+    <div className='w-[100%] h-[20vh] px-[20px] py-[15px] rounded-[40px] bg-base-200 grid grid-cols-2  	'>
+      <div className=' col-start-1 col-span-4  '>
+        {/* <ChartComponent /> */}
+        <MyChart/>
       </div>
 
       {/* <div >

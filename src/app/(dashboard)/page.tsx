@@ -23,8 +23,8 @@ export default function Home() {
   };
 
   return (
-    <main className=' '>
-      <div className=' grid grid-cols-12 '>
+    <main className=' grid grid-rows-2 '>
+      <div className=' grid grid-cols-12  '>
         <div className=' col-start-1 col-span-3  pl-[60px] mt-[40px]'>
           <div className='flex w-44  items-center  justify-around  '>
             <img src={frame3.src} className='' />
@@ -46,21 +46,22 @@ export default function Home() {
           <Player />
         </div>
         <div className='flex justify-center col-start-9 col-span-4 '>
-          <img src={cloud.src} />
+           <img src={cloud.src} />
         </div>
       </div>
 
-      <div className='mt-[30px]  pl-[60px] pr-[60px]  grid grid-cols-12 gap-[40px]'>
-        <div className=' col-start-1 col-span-1 '>
+      <div className='  pl-[60px] pr-[60px] gap-[40px]  grid grid-cols-12   '>
+        <div className=' col-start-1 col-span-1  '>
           <SideBar />
         </div>
-        <div className=' col-span-9 '>
+
+        <div className=' col-start-2 col-span-9  '>
           <Activities />
           <div className='mt-[45px] '>
             <WetherChart />
           </div>
         </div>
-        <div className='col-start-11 col-span-4'>
+        <div className='col-start-11 col-span-4  '>
           <WetherBar />
         </div>
       </div>

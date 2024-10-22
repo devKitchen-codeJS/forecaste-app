@@ -7,7 +7,7 @@ const SideBar: React.FC = () => {
     console.log("asd");
   };
   return (
-    <div className='w-[100px] h-[45vh] px-[20px]  rounded-[40px] bg-base-200 text-base-100 '>
+    <div className='w-[6vw] h-[45vh] px-[20px]  rounded-[40px] bg-base-200 text-base-100 '>
       <div className='avatar '>
         <div className='w-15 rounded-full'>
           {/* <img src='https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' /> */}
@@ -19,12 +19,12 @@ const SideBar: React.FC = () => {
           <span> weather</span>
         </div>
         <div className=' mt-[50px] flex flex-col justify-center  transition ease-in-out delay-150 hover:scale-110  duration-300  ' onClick={handle}>
-          <img src={frame3.src} className='h-[50px]' />
            <span> cities</span>
+          <img src={frame3.src} className='h-[50px]' />
         </div>
         <div className=' mt-[50px] flex flex-col justify-center transition ease-in-out delay-150 hover:scale-110  duration-300  ' onClick={handle}>
-          <img src={settingsIcon.src} />
           <span> settings</span>
+          <img src={settingsIcon.src} />
         </div>
       
       </div>

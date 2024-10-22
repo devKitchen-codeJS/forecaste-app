@@ -80,7 +80,7 @@ const SignUp: React.FC = () => {
 
             <div className='mt-20'>
               <span>
-                Dont have an account ? Just{" "}
+                Dont have an account ? Just 
                 <a
                   onClick={() => {
                     router.push("/signIn");
